@@ -5,7 +5,7 @@
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice</title>
+    <title>Information Form</title>
     <link rel="stylesheet" href="style.css">
         
 </head>
@@ -14,32 +14,22 @@
         
             
             <div id="navbar">
-            <a href="./Practice.html" target="_self" class="logo">akprograms.com</a>  
-            <a>Contat Us</a>
-            <a>My Projects</a>
+                <a href="./index.html" target="_self" class="logo">akprograms.com</a>  
             </div>
 
             <div class="heading"> 
-                <header> <fieldset class="fieldset-3">
-                    <h1>Welcome to my Page</h1>
-                    <h3>This is my Practice</h3>
-            </div>        
-
-        </header> </fieldset>
-    
+                <header> 
+                    <fieldset class="fieldset-3">
+                        <h1>Welcome to my Website</h1>
+                        <h3>You can give your information to us So, that we can store it</h3>
+                    
+                    </fieldset>
+                </header> 
+            </div>
 
     <hr>
 
     <main>
-       <fieldset class="fieldset-2"><div class="aside"> 
-           <aside>
-            <p class="p-1"><b> Subscribe my Youtube Channel</b></p>
-        <a href="https://www.youtube.com/channel/UCcudr-PJWIWVNQT-ZSpR9sg" target="_blank"><button>
-            <b>Subscribe</b>
-            
-        </button> </a>
-        </aside> 
-    </div> <br> <br></fieldset> 
 
 <section>
     <div class="container">
@@ -69,20 +59,27 @@
             <div class="form.group" id="Gender">    
                 <label for="Gender" class="gender">Gender
                 </label> <br><br>
-                <label for="Male">Male</label>
-                <input type="radio" id="male" value="Male" name="gender" required  class="gender">
+                
+                <label for="male">Male
+                    <input type="radio" name="gender" id="gender" class="male">
+                </label>
 
-                <label for="Female">Female</label>
-                <input type="radio" id="female" value="Female" name="gender" class="gender">
+                <label for="male">Female
+                    <input type="radio" name="gender" id="gender" class="female">
+                </label>
 
-                <label for="Other">Other</label>
-                <input type="radio" id="other" value="Other" name="gender" class="gender"> <br>
+                <label for="male"> Other
+                    <input type="radio" name="gender" id="gender" class="other">
+                </label>
+
             </div>
 
-            <div class="form.group">    <p class="paragraph">Select your country</p>
+            <div class="form.group">    
+                <p class="paragraph">Select your country</p>
                 
                 <select class="country" name="country" required >
-                    
+
+                    <option value="Select" selected >Select</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
                     <option value="Algeria">Algeria</option>
@@ -323,17 +320,17 @@
                     <option value="Zimbabwe">Zimbabwe</option>
             </select> <br>
             </div>
-
-            <div class="form group">
-                <label for="city" class="city"> <p>Type you city</p> </label>
-                <input type="text" name="city" id="city" placeholder="City"> 
-                
-            </div> <br>
-
+<br>
+            <div>
+                <label for="city">In which city you are in? <br>
+                    <input type="text" name="city" id="city" placeholder="Type your City">
+                </label>
+            </div>
+<br>
             <div class="form.group">
                 <label for="age">Enter Your Age
                 </label> <br>
-                <input type="number" name="age" id="age" value="0" required> <br><br>
+                <input type="number" name="age" id="age" required placeholder="Enter your age"> <br><br>
             </div>
 
             <div class="form.group">    <label for="email">Enter Your Email
@@ -341,54 +338,24 @@
                 <input type="email" name="email" id="email" placeholder="example@gmail.com" size="30" required> <br><br>
             </div>
 
-            <div class="form.group">    <label for="password">Password
+            <div class="form.group">    <label for="password"> Create Password
                 </label> <br>
-                <input name="password" id="password" type="password" placeholder="Password" required pattern="[0-9] {A-Z} {a-z} {@#}">     
+                <input name="password" id="password" type="password" placeholder=" Create Password" required pattern="[0-9] {A-Z} {a-z} {@#}">     
             </div>
+<br>
+            <div class="form.group">
+                <label for="age">Enter your Phone Number
+                </label> <br>
+                <input type="text" name="phone" id="phone" required placeholder="Enter your Phone Number"> <br><br>
+            </div>
+
 
             <div class="form.group">
-                <p>Choose your favourite Subjects</p>
-                <label for="Maths" class="subject">Maths</label>
-                <input type="checkbox" name="subject" id="Maths"> <br>
-
-                <label for="Science" class="subject">Science</label> 
-                <input type="checkbox" name="subject" id="Science"> <br>
-
-                <label for="Computer" class="subject">Computer</label> 
-                <input type="checkbox" name="subject" id="Computer"> <br>
-
-                <label for="Hindi" class="subject">Hindi</label> 
-                <input type="checkbox" name="subject" id="Hindi"> <br>
-
-                <label for="Physics" class="subject">Physics</label>
-                <input type="checkbox" name="subject" id="Physics"> <br>
-
-                <label for="Gujarati" class="subject">Gujarati</label>
-                <input type="checkbox" name="subject" id="Gujarati"> <br>
-
-                <label for="Social Science" class="subject">Social Science</label>
-                <input type="checkbox" name="subject" id="Social Science"> <br>
-
-                <label for="Biology" class="subject">Biology</label>
-                <input type="checkbox" name="subject" id="Biology"> <br>
-
-                <label for="Literature" class="subject">Literature</label>
-                <input type="checkbox" name="subject" id="Literature"> <br>
-
-                <label for="GK" class="subject">GK</label>
-                <input type="checkbox" name="subject" id="GK"> <br>
-
-                <label for="Grammer" class="subject">Grammer</label>
-                <input type="checkbox" name="subject" id="Grammer"> <br> <br>
-
+                <label for="income">What is your income?</label><br>
+                <input type="text" id="income" name="income" placeholder="Enter your Income"> <b>₹</b><br><br>
             </div>
 
-            <div class="form.group">
-                <label for="income">What is your income? (if not so, type -)</label><br>
-                <input type="text" id="income" name="income"> <b>₹</b><br><br>
-            </div>
-
-            <input type="submit" value="Submit" >
+            <input type="submit" value="Submit">
 
             </fieldset>
         </form>
@@ -396,9 +363,9 @@
 </section>
     
     </main>
-    <footer class="footer">
-
-        
-    </footer>
+   <br>
+   <br>
+   <br>
+   <br>
 </body>
 </html>
