@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information Form</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="./Images/info-2.jpg">
         
 </head>
 <body>
@@ -33,7 +34,7 @@
 
 <section>
     <div class="container">
-        <form method="post" id="form">
+        <form method="post" id="form" action="https://submit-form.com/k6bhOzWW2"
             <fieldset class="fieldset-1">
                 <center><legend><b> Information Form</b></legend>
                       </center> <hr> <br>
@@ -42,34 +43,34 @@
             <div class="form.group">            
                 <label for="firstname"> Firstname 
                 </label> <br>
-                <input type="text" id="firstname" name="ftname" placeholder= "Firstname" size="15" required pattern="{a-z} {A-Z}"> <br> <br>
+                <input type="text" id="firstname" name="Firstname" placeholder= "Firstname" size="15" required pattern="{a-z} {A-Z}"> <br> <br>
             </div>
             
             <div class="form.group">
                 <label for="lastname">Lastname
                 </label> <br>
-                <input type="text" id="lastname" name="ltname" placeholder="Lastname" size="15" required pattern="{a-z} {A-Z}"><br><br>
+                <input type="text" id="lastname" name="Lastname" placeholder="Lastname" size="15" required pattern="{a-z} {A-Z}"><br><br>
             </div>
 
             <div class="form group">
                 <label for="dob" class="dob">Date of Birth</label>
-                <input type="date" name="date" id="dob" required placeholder="Date of Birth">
+                <input type="date" name="DOB" id="dob" required placeholder="Date of Birth">
             </div> <br>
 
             <div class="form.group" id="Gender">    
-                <label for="Gender" class="gender">Gender
+                <label for="Gender" class="Gender">Gender
                 </label> <br><br>
                 
-                <label for="male">Male
-                    <input type="radio" name="gender" id="gender" class="male">
+                <label for="male">
+                    <input type="radio" name="Gender" id="gender" class="male" value="Male"> Male
                 </label>
 
-                <label for="male">Female
-                    <input type="radio" name="gender" id="gender" class="female">
+                <label for="female">
+                    <input type="radio" name="Gender" id="gender" class="female" value="Female"> Female
                 </label>
 
-                <label for="male"> Other
-                    <input type="radio" name="gender" id="gender" class="other">
+                <label for="other">
+                    <input type="radio" name="Gender" id="gender" class="other" value="Other"> Other
                 </label>
 
             </div>
@@ -77,7 +78,7 @@
             <div class="form.group">    
                 <p class="paragraph">Select your country</p>
                 
-                <select class="country" name="country" required >
+                <select class="country" name="Country" required >
 
                     <option value="Select" selected >Select</option>
                     <option value="Afghanistan">Afghanistan</option>
@@ -323,39 +324,45 @@
 <br>
             <div>
                 <label for="city">In which city you are in? <br>
-                    <input type="text" name="city" id="city" placeholder="Type your City">
+                    <input type="text" name="City" id="city" placeholder="Type your City">
                 </label>
             </div>
 <br>
             <div class="form.group">
                 <label for="age">Enter Your Age
                 </label> <br>
-                <input type="number" name="age" id="age" required placeholder="Enter your age"> <br><br>
+                <input type="number" name="Age" id="age" required placeholder="Enter your age"> <br><br>
             </div>
 
             <div class="form.group">    <label for="email">Enter Your Email
                 </label> <br>
-                <input type="email" name="email" id="email" placeholder="example@gmail.com" size="30" required> <br><br>
+                <input type="email" name="Email" id="email" placeholder="example@gmail.com" size="30" required> <br><br>
             </div>
 
-            <div class="form.group">    <label for="password"> Create Password
+            <div class="form.group"><label for="password"> Create Password
                 </label> <br>
-                <input name="password" id="password" type="password" placeholder=" Create Password" required pattern="[0-9] {A-Z} {a-z} {@#}">     
+                <input name="Password" id="password" type="password" placeholder=" Create Password" required pattern="[0-9] {A-Z} {a-z} {@#}">     
             </div>
 <br>
             <div class="form.group">
                 <label for="age">Enter your Phone Number
                 </label> <br>
-                <input type="text" name="phone" id="phone" required placeholder="Enter your Phone Number"> <br><br>
+                <input type="text" name="Phone" id="phone" required placeholder="Enter your Phone Number"> <br><br>
             </div>
 
 
             <div class="form.group">
                 <label for="income">What is your income?</label><br>
-                <input type="text" id="income" name="income" placeholder="Enter your Income"> <b>₹</b><br><br>
+                <input type="text" id="income" name="Income" placeholder="Enter your Income"> <b>₹</b><br><br>
+            </div>
+
+            <div>
+                <label for="message">Message</label><br>
+                <textarea name="Message" id="message" cols="38" rows="10" placeholder="Type Message"></textarea>
             </div>
 
             <input type="submit" value="Submit">
+            <br>
 
             </fieldset>
         </form>
@@ -363,9 +370,6 @@
 </section>
     
     </main>
-   <br>
-   <br>
-   <br>
-   <br>
+   
 </body>
 </html>
