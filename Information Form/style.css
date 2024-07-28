@@ -40,28 +40,6 @@ a
 }
 
 
-.aside
-{
-
-    padding: 10px 10px;
-    box-shadow: rgba(0, 0, 0, 0.9);
-}
-
-.aside button
-{
-    background-color: red;
-    color: black;
-    border-radius: 9px;
-    border-color: red;
-    cursor:pointer;
-    
-}
-
-.aside,p-1
-{
-    color: rgb(218, 137, 32) ;
-}
-
 .container
 {
     color:darkviolet;
@@ -108,7 +86,7 @@ input[type=text]
     border: none;
     outline: none; 
     padding: 7px;
-    width: 20vw;
+    width: 272px;
     opacity: 1;
     
 }
@@ -121,6 +99,7 @@ input[type=text]
 input[type=text]:focus
 {
    background-color: gold;
+   outline: none;
 }
 
 .fieldset-1 legend b
@@ -142,6 +121,7 @@ input[type=text]:focus
 .country:focus
 {
     background-color: gold;
+    outline: none;
 }
 
 .country:hover
@@ -149,23 +129,6 @@ input[type=text]:focus
     opacity: 0.85;
 }
 
-.fieldset-2
-{
-    background-image: url(https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGdhbWluZyUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    border-color: lime;
-}
-
-.fieldset-2 aside button
-{
-    border-left-color: aqua;
-    border-top-color: aqua;
-    border-bottom-color: aqua;
-    border-right-color: aqua;
-}
 
 input[type=number]
 {
@@ -179,6 +142,7 @@ input[type=number]
 input[type=number]:focus
 {
     background-color: gold;
+    outline: none;
 }
 
 .country
@@ -204,12 +168,13 @@ input[type=email]
     border: none;
     outline: none;
     padding-left: 10px;
-    width: 20vw;
+    width: 272px;
 }
 
 input[type=email]:focus
 {
     background-color: gold;
+    outline: none;
 }
 
 input[type=password]
@@ -218,7 +183,7 @@ input[type=password]
     border: none;
     outline: none;
     padding-left: 10px;
-    width: 20vw;
+    width: 272px;
     height: 25px;
 }
 
@@ -227,62 +192,11 @@ input[type=password]:focus
     background-color: gold;
 }
 
-input[type=checkbox]
-{
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    padding-left: 10px;
-    
-}
-
-input[type=checkbox]:focus
-{
-    background-color: gold;
-}
-
-.subject
-{
-    color: rgb(52, 236, 13)
-}
-
-#video
-{
-    background-size: cover;
-    background-attachment: fixed;
-    height: auto;
-    width: auto;
-    background-color: transparent;
-}
-
-.footer p
-{
-    color: white;
-}
-
-.footer a button 
-{
-    color: blueviolet;
-    background-color: red;
-    box-sizing: border-box ;
-    
-    outline: none;
-   border-radius: 10px;
-   font-weight:400;
-   
-}
-
-#button
-{
-    border-left-color: orange;
-    border-right-color: orange;
-    border-top-color: orange;
-    border-bottom-color: orange;
-}
 
 input[type=date]:focus
 {
     background-color: gold;
+    outline: none;
 }
 
 input[type=text]:hover
@@ -382,3 +296,31 @@ input[type=text]
     border-color:lawngreen;
     border-width: 2px;
 }
+
+textarea
+{
+    resize: none;
+    border-radius: 7px;
+    width: 272px;
+    padding-top: 15px;
+    padding-left: 20px;
+    opacity: 1;
+}
+
+textarea::placeholder
+{
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+textarea:focus
+{
+    background-color: gold;
+    outline: none;
+}
+
+textarea:hover
+{
+    opacity: 0.85;
+}
+
