@@ -1,0 +1,201 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Computer Quiz Registration</title>  
+    <link rel="icon" type="image/x-icon" href="/Images/AK-Programs-Logo.png">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <style>  
+        * {  
+            margin: 0;  
+            padding: 0;  
+            box-sizing: border-box;  
+            font-family: Arial, sans-serif;  
+        }  
+        body {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh;  
+            /* background: linear-gradient(135deg, #6e8efb, #a777e3); */
+            background-image: url(/Images/Registration\ background\ 3\ -\ Final.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }  
+        .container {  
+            background: white;  
+            padding: 20px;  
+            border-radius: 10px;  
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);  
+            width: 90%;  
+            max-width: 400px;  
+            text-align: center;  
+            position: relative;
+            top: 30px;
+        }  
+        h2 {  
+            margin-bottom: 15px;  
+        }  
+        input, select, button {  
+            width: 100%;  
+            padding: 10px;  
+            margin: 8px 0;  
+            border: 1px solid #ccc;  
+            border-radius: 5px;  
+        }  
+        button {  
+            background: #6e8efb;  
+            color: white;  
+            border: none;  
+            cursor: pointer;  
+            font-size: 16px;  
+        }  
+        button:hover {  
+            background: #5a7be0;  
+        }  
+
+        @media (max-width: 768px) {  
+            .container {  
+                width: 100%;  
+                border-radius: 0;  
+            }  
+        }  
+
+        @media (max-width: 425px) {  
+            input, select, button {  
+                padding: 8px;  
+                font-size: 14px;  
+            }  
+        }  
+
+        @media (max-width: 320px) {  
+            input, select, button {  
+                padding: 6px;  
+                font-size: 12px;  
+            }  
+        }  
+
+        input:focus, select:focus {  
+            outline: none;  
+            border: 1.5px solid #6e8efb;  
+        }  
+
+        input::placeholder {  
+            color: #ccc;  
+        }  
+
+        input[type="number"]::-webkit-inner-spin-button,  
+        input[type="number"]::-webkit-outer-spin-button {  
+            -webkit-appearance: none;  
+            margin: 0;  
+        }  
+
+        input[type="text"]:focus:invalid {  
+            border: 1px solid red;  
+        }  
+
+
+        input[type="number"]:focus:invalid {  
+            border: 1px solid red;  
+        }   
+
+        input[type="text"]:focus:valid {  
+            border: 1px solid green;  
+        }
+
+        input[type="number"]:focus:valid {  
+            border: 1px solid green;  
+        }
+
+        input[type="text"]:focus:valid::placeholder {  
+            color: green;  
+        }
+
+        input[type="number"]:focus:valid::placeholder {  
+            color: green;  
+        }
+
+        input[type="text"]:focus:invalid::placeholder {  
+            color: red;  
+        }
+
+        input[type="number"]:focus:invalid::placeholder {  
+            color: red;  
+        }
+
+        .madeBy
+        {
+            font-size: 15px;
+            color: #000000;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <h2>Computer Quiz Registration</h2>  
+        <form id="quizForm">  
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" pattern="[a-zA-Z]+" title="Only letters are allowed" required>  
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name" pattern="[a-zA-Z]+" title="Only letters are allowed" required>  
+            <input type="number" id="rollNo" name="rollNo" placeholder="Roll No" min="1" max="99" required>  
+            <input type="text" id="std" name="std" placeholder="Std (7/8/9)" pattern="[7-9]" title="Only Standard 7, 8, or 9 are allowed" required>  
+            <input type="text" id="section" name="section" placeholder="Section (A/B/C/D)" pattern="[a-dA-D]" title="Only Section A, B, C, or D are allowed" required>  
+
+            <button type="submit" id="btn"><i class="fa-solid fa-paper-plane"></i> Start Quiz</button>  
+            <p class="madeBy"> <i class="fa-solid fa-user"></i> Made by Naitik Kashyap</p>
+        </form>  
+        
+        <script>
+            // Capitalizing first letter of first and last names  
+            document.querySelector("#firstName").addEventListener("input", function() {  
+                this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase();  
+            });  
+            document.querySelector("#lastName").addEventListener("input", function() {  
+                this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase();  
+            });  
+            document.querySelector("#section").addEventListener("input", function() {  
+                this.value = this.value.charAt(0).toUpperCase();  
+            });  
+
+            const form = document.querySelector("#quizForm");  
+            const submitButton = document.querySelector("#btn");  
+
+            form.addEventListener('submit', e => {  
+                e.preventDefault();   
+                const confirmation = confirm("Make sure you have entered the correct details. Good luck!\nIf Everything is fine, click OK \nIf Something is wrong, click Cancel");  
+                
+                if (confirmation) {  
+                    submitButton.disabled = true;  
+    
+                    // Get form values  
+                    const firstName = document.querySelector("#firstName").value;  
+                    const lastName = document.querySelector("#lastName").value;  
+                    const rollNo = document.querySelector("#rollNo").value;   
+                    const std = document.querySelector("#std").value;  
+                    const section = document.querySelector("#section").value;  
+    
+                    // Build the URL with parameters for redirection  
+                    let redirectURL = "";  
+                    if (std === "7") {  
+                        redirectURL = `quiz_7.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&rollNo=${encodeURIComponent(rollNo)}&std=${encodeURIComponent(std)}&section=${encodeURIComponent(section)}`;  
+                    } else if (std === "8") {  
+                        redirectURL = `quiz_8.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&rollNo=${encodeURIComponent(rollNo)}&std=${encodeURIComponent(std)}&section=${encodeURIComponent(section)}`;  
+                    } else if (std === "9") {  
+                        redirectURL = `quiz_9.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&rollNo=${encodeURIComponent(rollNo)}&std=${encodeURIComponent(std)}&section=${encodeURIComponent(section)}`;  
+                    }  
+    
+                    window.location.href = redirectURL;  
+                } else {  
+                    submitButton.disabled = false; // Re-enable the button if the user chooses to stay  
+                }  
+            });  
+        </script>  
+        
+    </div>  
+</body>  
+</html>  

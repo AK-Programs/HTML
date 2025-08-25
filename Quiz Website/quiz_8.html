@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Quiz - 8</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/Images/AK-Programs-Logo.png"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .quiz-container {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .options label {
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid #ddd;
+        }
+        .options input[type="radio"] {
+            display: none;
+        }
+        .options input[type="radio"]:checked + label {
+            background-color: #007bff;
+            color: white;
+        }
+        .correct-answer {
+            background-color: #c8e6c9 !important;
+            border-color: green !important;
+        }
+        .wrong-answer {
+            background-color: #ffcccb !important;
+            border-color: red !important;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #submit {
+            background-color: #28a745;
+            color: white;
+        }
+        #submit:hover {
+            box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
+        }
+        #reset {
+            background-color: #dc3545;
+            color: white;
+            display: none;
+        }
+        #reset:hover {
+            box-shadow: 0 0 15px rgba(220, 53, 69, 0.7);
+        }
+        @media (max-width: 768px) {
+            .quiz-container {
+                width: 95%;
+            }
+        }
+
+        .madeBy
+        {
+            font-size: 15px;
+            color: #000000;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        h1
+        {
+            background-color: blue;
+            box-shadow: 0 0 10px darkblue;
+            border-radius: 8px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Computer Quiz - 8th Std</h1>
+        <div id="quiz"></div>
+        <button id="submit" class="btn">Submit Quiz</button>
+        <!-- <button id="reset" class="btn">Reset Quiz</button> -->
+        <div id="result"></div>
+        <p class="madeBy"> <i class="fa-solid fa-user"></i> Made by Naitik Kashyap</p>
+    </div>
+    <script>  
+        const allQuestions = [  
+            { question: "You can reduce the duration of a video-clip with the help of the _____tool.", options: ["Razor tool", "Resize tool", "Razerer", "Edit menu"], answer: "Razor tool" },  
+            { question: "It visualizes your project in a graphical way where you can watch your video as you work on it?", options: ["Zoom Slider", "Loom", "Video Preview", "Timeline"], answer: "Video Preview" },  
+            { question: "What is the shortcut key for open a new project?", options: ["Ctrl + S", "Ctrl + N", "Ctrl + C", "Ctrl + O"], answer: "Ctrl + N" },  
+            { question: "How to export your last saved video in open shot video editor?", options: ["Export video", "Update Video", "Analyze Video", "Commit Video"], answer: "Export video" },  
+            { question: "______are added to add special effects to the video.", options: ["Effects", "Icons", "Illustrations", "Transitions"], answer: "Transitions" },  
+            { question: "Audacity is a popular free editor and ______software.", options: ["Canva", "Recorder", "InShot", "Kinemaster"], answer: "Recorder" },  
+            { question: "Once you open an audio file, the screen will show the stereo _____for open the file.", options: ["Waveform", "Timeline", "Sine", "Zig-Zag"], answer: "Waveform" },  
+            { question: "It is used to join the two string values.", options: ["Algorithm", "Exponential", "Replication", "Concatenation"], answer: "Concatenation" },  
+            { question: "Which loop is used when you are sure about how many times a loop body will be executed?", options: ["For", "While", "Both For and While", "None of these"], answer: "For" },  
+            { question: "Which function is used with the for loop in Python is helpful in generating a sequence of number in the form of a list?", options: ["index()", "map()", "help()", "range()"], answer: "range()" },  
+            { question: "Which loop can be applied to a program where the number of iterations is not known before hand?", options: ["while", "for", "Both while and for", "None of these"], answer: "while" },  
+            { question: "If the condition in a loop is false in the first step itself, you get _____?", options: ["Output", "Prompt", "Error", "No output"], answer: "No output" },  
+            { question: "What is the name of conditional statements?", options: ["Sequential Statement", "Iterative Statement", "Decision making Statement", "Looping Statement"], answer: "Decision making Statement" },  
+            { question: "What is the usage of imitation of language and thoughts of another person projected as one’s own 	original work?", options: ["Cyber Extortion", "Phishing", "Plagiarism", "Hacking"], answer: "Plagiarism" },  
+            { question: "What is another name of Hacking?", options: ["Spamming", "Privicy Hacking", "Ethical Hacking", "DevOps"], answer: "Ethical Hacking" },  
+            { question: "_______is a regal right granted by the law to the creator for is original work?", options: ["Hallmark", "Trademark", "Patent", "Copy right"], answer: "Patent" },  
+            { question: "What is the full form of WAP?", options: ["Wireless Access Point", "Wireless Account Protection", "Wireless Access Pannel", "Wireless Authorization Privacy"], answer: "Wireless Access Point" },  
+            { question: "What is the full form of ENC?", options: ["Ethernet National Card", "Ethical Nation Connection", "Ethernet Network Card", "Eruption Net Code"], answer: "Ethernet National Card" },  
+            { question: "What is the full form of PCI?", options: ["Panel Code India", "Peripheral Components Interconnect", "Panel Connected Internet", "Privacy Connection Interface"], answer: "Peripheral Components Interconnect" },  
+            { question: "What is the full form MAN?", options: ["Miniature Account Network", "Metro Area Network", "Metropolitan Area Network", "Meghalaya Area Network"], answer: "Metropolitan Area Network" }  
+        ];  
+
+        function loadQuiz() {  
+            document.getElementById("quiz").innerHTML = "";  
+            let quizData = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 20);  
+
+            quizData.forEach((q, index) => {  
+                let options = q.options.sort(() => 0.5 - Math.random());  
+                const questionElement = document.createElement("div");  
+                questionElement.classList.add("question");  
+                questionElement.innerHTML = `<p>${index + 1}. ${q.question}</p>`;  
+                const optionsContainer = document.createElement("div");  
+                optionsContainer.classList.add("options");  
+
+                options.forEach(option => {  
+                    optionsContainer.innerHTML += `<input type="radio" name="q${index}" value="${option}" id="q${index}-${option}">   
+                    <label for="q${index}-${option}">${option}</label>`;  
+                });  
+
+                questionElement.appendChild(optionsContainer);  
+                document.getElementById("quiz").appendChild(questionElement);  
+
+            });  
+
+            // Hide submit button initially  
+            document.getElementById("submit").style.display = "none";  
+
+            // Add event listener to enable submit button when all are answered  
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {  
+                radio.addEventListener("change", checkIfAllAnswered);  
+            });  
+        }  
+
+        function checkIfAllAnswered() {  
+            let allAnswered = true;  
+            document.querySelectorAll(".question").forEach((question, index) => {  
+                if (!document.querySelector(`input[name="q${index}"]:checked`)) {  
+                    allAnswered = false;  
+                }  
+            });  
+
+            if (allAnswered) {  
+                document.getElementById("submit").style.display = "block";  
+            } else {  
+                document.getElementById("submit").style.display = "none";  
+            }  
+        }  
+
+        function getURLParams() {  
+            const urlParams = new URLSearchParams(window.location.search);  
+            return {  
+                firstName: urlParams.get('firstName'),  
+                lastName: urlParams.get('lastName'),  
+                rollNo: urlParams.get('rollNo'), // Get roll number  
+                std: urlParams.get('std'),  
+                section: urlParams.get('section')  
+            };  
+        }  
+
+
+        document.getElementById("submit").addEventListener("click", () => { 
+            const conformation = confirm("Make sure to check all answers before submitting. Once you submit you will get your score as per your answer.\nIf Everything is checked, click OK \nIf you want to check, click Cancel");
+            if (conformation) {
+                
+                let score = 0; // Initialize score counter  
+                let totalQuestions = 20; // Total number of questions  
+
+                document.querySelectorAll(".question").forEach((question, index) => {  
+                    let selected = document.querySelector(`input[name="q${index}"]:checked`);  
+                    let correctAnswer = allQuestions[index].answer;  
+                    let labels = question.querySelectorAll("label");  
+
+                    labels.forEach(label => {  
+                        if (label.innerText === correctAnswer) {  
+                            label.classList.add("correct-answer");  
+                        } else if (label.previousElementSibling.checked) {  
+                            label.classList.add("wrong-answer");  
+                        }  
+                    });  
+
+                    // Increase score if the selected answer is correct  
+                    if (selected && selected.value === correctAnswer) {  
+                        score++;  
+                    }  
+                });  
+
+                // Disable all radio buttons to prevent changes after submission  
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {  
+                    radio.disabled = true;  
+                });  
+
+                // Display score and make it visible  
+                document.getElementById("result").innerText = `Your Score: ${score}/${totalQuestions}`;  
+                document.getElementById("result").style.display = "block"; // Show score  
+                document.getElementById("submit").style.display = "none";  
+                // document.getElementById("reset").style.display = "block";  
+
+                // === Send score to Google Sheet ===  
+                const scriptURL = 'https://script.google.com/macros/s/AKfycby1ALBstDTHJZVGmw9M4ILgMqpGGxdqKsEyKdUmv7Eg6Jg6N1xcfqMB-gqEr3FwW3JW/exec';  
+                const formData = new FormData();  
+                const userInfo = getURLParams(); // Get user info  
+
+                formData.append("firstName", userInfo.firstName);  // Add first name  
+                formData.append("lastName", userInfo.lastName);    // Add last name  
+                formData.append("rollNo", userInfo.rollNo);      // Add roll number  
+                formData.append("std", userInfo.std);    // Add class  
+                formData.append("section", userInfo.section); // Add section  
+                formData.append("Score", score);          // Add score  
+                formData.append("total", totalQuestions); // Total possible score  
+                formData.append("timestamp", new Date().toLocaleString()); // Send the timestamp  
+
+                fetch(scriptURL, { method: 'POST', body: formData })  
+                    .then(response => console.log("Score Sent Successfully"))  
+                    .catch(error => console.error("Error sending score")) 
+            } else {
+                return;
+            }
+        });    
+
+        // Reset Quiz  
+        //document.getElementById("reset").addEventListener("click", () => {  
+          //  loadQuiz();  
+            //document.getElementById("reset").style.display = "none";  
+          //  document.getElementById("result").innerText = ""; // Reset score text  
+          //  document.getElementById("result").style.display = "none"; // Hide score  
+        // });  
+
+        loadQuiz();  
+    </script>  
+    
+</body>
+</html>
